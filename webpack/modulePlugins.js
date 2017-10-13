@@ -15,7 +15,7 @@ module.exports = [
     )
   }),
   new HtmlWebpackPlugin({
-    title: 'Zanroo :: Candidate',
+    title: 'Get Link :: front-end',
     template: path.join(__dirname, '..', 'src/template', 'index.html')
   })
 ]

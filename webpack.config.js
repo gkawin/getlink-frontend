@@ -5,10 +5,10 @@ const modulePlugins = require('./webpack/modulePlugins')
 const development = process.env.NODE_ENV === 'development'
 
 module.exports = {
-  devtool: 'eval',
+  devtool: development ? 'eval' : 'source-map',
   entry: {
-    app: path.resolve(__dirname, 'src', 'entry.js'),
-    vendor: [ 'react', 'react-dom', 'prop-types' ]
+    app: path.resolve(__dirname, 'src', 'core', 'entry.js'),
+    vendor: [ 'react', 'react-dom', 'prop-types'   ]
   },
   resolve: {
     alias: moduleAliases
