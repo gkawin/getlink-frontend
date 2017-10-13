@@ -4,6 +4,7 @@
   "description": "Getlink's assignment (Frontend)",
   "main": "index.js",
   "scripts": {
+    "dev:ui": "start-storybook -p 3001 -c .storybook",
     "dev": "env NODE_ENV=development webpack-dev-server --hot --inline --progress --port 3000",
     "test": "jest",
     "lint": "eslint src",
@@ -22,9 +23,11 @@
   "dependencies": {
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react-dom": "^16.0.0",
+    "styled-components": "^2.2.1"
   },
   "devDependencies": {
+    "@storybook/react": "^3.2.12",
     "babel-core": "^6.26.0",
     "babel-eslint": "^7.2.3",
     "babel-jest": "^21.2.0",
