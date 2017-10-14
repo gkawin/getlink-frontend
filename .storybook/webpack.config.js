@@ -7,5 +7,10 @@ module.exports = {
     rules: [
       ...moduleRulesBabel,
     ]
+  },
+  resolve: {
+    alias: Object.assign({ }, moduleAliases,
+      { 'main-design$': require.resolve('../src/design') }
+    )
   }
 }

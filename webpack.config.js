@@ -11,7 +11,9 @@ module.exports = {
     vendor: [ 'react', 'react-dom', 'prop-types'   ]
   },
   resolve: {
-    alias: moduleAliases
+    alias: Object.assign({ }, moduleAliases,
+      { 'main-design$': require.resolve('../src/design') }
+    )
   },
   output: {
     filename: '[name].bundle.js',
