@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/gkawin/getlink-frontend#readme",
   "dependencies": {
+    "faker": "^4.1.0",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-bootstrap": "^0.31.3",
