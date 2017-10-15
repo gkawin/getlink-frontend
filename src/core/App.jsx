@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Jumbotron, Button } from 'react-bootstrap'
-import styled from 'styled-components'
 
 class App extends React.PureComponent {
   static propTypes = {
@@ -31,8 +30,4 @@ class App extends React.PureComponent {
   }
 }
 
-export default styled(App)`
-  position: fixed;
-  top: 0;
-  left: 0;
-`
+export default App
