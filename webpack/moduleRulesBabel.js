@@ -3,7 +3,7 @@ const development = process.env.NODE_ENV === 'development'
 
 module.exports = [
   {
-    test: /\.js$/,
+    test: /\.js?/,
     include: [
       path.join(__dirname, '..', 'src')
     ],

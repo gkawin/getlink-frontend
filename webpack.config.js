@@ -12,7 +12,7 @@ module.exports = {
   },
   resolve: {
     alias: Object.assign({ }, moduleAliases,
-      { 'main-design$': require.resolve('../src/design') }
+      { 'main-design$': require.resolve('./src/design') }
     )
   },
   output: {
