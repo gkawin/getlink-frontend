@@ -8,7 +8,7 @@ import { colors } from 'main-design'
 class Footer extends React.PureComponent {
   static propTypes = {
     className: PropTypes.string,
-    items: PropTypes.array,
+    contents: PropTypes.array.isRequired,
   }
   renderContactUs = () => (
     <Col sm={6} xs={12} >
@@ -37,7 +37,7 @@ class Footer extends React.PureComponent {
       <footer className={this.props.className}>
         <Grid className='grid__container'>
           <Row className='row__content'>
-            {_.map(this.props.items, this.renderFooterBoxItem)}
+            {_.map(this.props.contents, this.renderFooterBoxItem)}
             {this.renderContactUs()}
           </Row>
           <Row className='row__copyright'>
@@ -85,7 +85,6 @@ export default styled(Footer)`
     }
     &__menu-item {
       color: ${colors.$grey400};
-      font-weight: lighter;
       line-height: 32px;
       cursor: pointer;
       &:hover {
@@ -97,7 +96,6 @@ export default styled(Footer)`
     }
     &__vistion {
       color: ${colors.$grey400};
-      font-weight: lighter;
       margin-top: 10px;
     }
   }

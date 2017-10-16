@@ -9,12 +9,12 @@ import Box from './Box.jsx'
 class BoxContents extends React.PureComponent {
   static propTypes = {
     className: PropTypes.string,
-    data: PropTypes.array.isRequired,
+    contents: PropTypes.array.isRequired,
   }
 
   renderItems = () => {
     const itemPerRow = 3
-    const chuckedItems = _.chunk(this.props.data, itemPerRow)
+    const chuckedItems = _.chunk(this.props.contents, itemPerRow)
     return _.map(chuckedItems, (items, index) => (
       <Row key={index} className='show-grid'>
         {_.map(items, (item, index) => (

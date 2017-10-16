@@ -5,7 +5,7 @@ import Footer from './Footer.jsx'
 storiesOf('Footer', module)
 .add('Primary', () => (
   <Footer
-    items={[
+    contents={[
       {
         label: 'Company Name',
         menus: [

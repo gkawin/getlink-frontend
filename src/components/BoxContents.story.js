@@ -6,7 +6,7 @@ import Faker from 'faker'
 storiesOf('BoxContents', module)
 .add('Primary', () => (
   <BoxContents
-    data={[
+    contents={[
       {
         photo: Faker.image.image(),
         label: Faker.lorem.word(),
