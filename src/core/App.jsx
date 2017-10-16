@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Faker from 'faker'
 import styled from 'styled-components'
+import { colors } from 'main-design'
 
 import HeaderContent from '../components/HeaderContent.jsx'
 import Announcement from '../components/Announcement.jsx'

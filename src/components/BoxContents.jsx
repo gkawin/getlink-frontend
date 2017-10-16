@@ -31,14 +31,16 @@ class BoxContents extends React.PureComponent {
   }
   render () {
     return (
-      <div className={this.props.className}>
-        <Grid>
-          {this.renderItems()}
-        </Grid>
-      </div>
+      <Grid className={this.props.className}>
+        {this.renderItems()}
+      </Grid>
     )
   }
 }
 
 export default styled(BoxContents)`
+  padding: 0 100px;
+  @media (max-width: 767px) {
+    padding: 0 30px;
+  }
 `

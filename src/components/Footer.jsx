@@ -23,7 +23,7 @@ class Footer extends React.PureComponent {
   )
   renderFooterBoxItem = (item, index) => {
     return (
-      <Col sm={2} xs={4} key={index}>
+      <Col sm={2} xs={6} key={index}>
         <div className='col__title'>{item.label}</div>
         <div className='col__info-line' />
         <ul className='col__menu-list'>
@@ -34,36 +34,28 @@ class Footer extends React.PureComponent {
   }
   render () {
     return (
-      <footer className={this.props.className}>
-        <Grid className='grid__container'>
+      <div className={this.props.className}>
+        <Grid>
           <Row className='row__content'>
             {_.map(this.props.contents, this.renderFooterBoxItem)}
             {this.renderContactUs()}
           </Row>
-          <Row className='row__copyright'>
-            <Col sm={12}>©2017 Company Name (Thailand) Co., Ltd. All Rights Reserved.</Col>
-          </Row>
         </Grid>
-      </footer>
+      </div>
     )
   }
 }
 
 export default styled(Footer)`
-  height: 60px;
-  .grid__container {
-    box-sizing: border-box;
-  }
+  border-top: 2px solid ${colors.$grey400};
+  box-sizing: border-box;
+  background-color: ${colors.$grey100};
   .row {
     &__content {
-      border-bottom: 1px solid ${colors.$grey200};
-      padding: 20px;
+      margin: 20px 70px;
     }
-    &__copyright {
-      text-align: center;
-      padding: 20px;
-      color: ${colors.$grey400};
-      font-size: 14px;
+    @media (max-width: 767px) {
+      margin: 20px 0;
     }
   }
   .col {
@@ -84,7 +76,7 @@ export default styled(Footer)`
       padding-left: 0;
     }
     &__menu-item {
-      color: ${colors.$grey400};
+      color: ${colors.$grey500};
       line-height: 32px;
       cursor: pointer;
       &:hover {
@@ -95,7 +87,7 @@ export default styled(Footer)`
       margin-bottom: 20px;
     }
     &__vistion {
-      color: ${colors.$grey400};
+      color: ${colors.$grey500};
       margin-top: 10px;
     }
   }
