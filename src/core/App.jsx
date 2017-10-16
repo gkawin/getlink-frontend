@@ -16,11 +16,11 @@ class App extends React.PureComponent {
   render () {
     return (
       <div className={this.props.className}>
-        <section className='header-content'>
+        <header className='header-content'>
           <HeaderContent
             avatar={Faker.image.image()}
           />
-        </section>
+        </header>
         <section className='announcement'>
           <Announcement />
         </section>

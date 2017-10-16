@@ -27,6 +27,9 @@ class Box extends React.PureComponent {
 export default styled(Box)`
   /* //HACK: the height value was adjusted by debugging on browser. */
   height: 260px;
+  @media (max-width: 767px) {
+    height: auto;
+  }
   .label-word {
     font-size: 18px;
     font-weight: 600;

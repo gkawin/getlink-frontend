@@ -1,45 +1,84 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Image, PageHeader, small } from 'react-bootstrap'
+import { Image } from 'react-bootstrap'
 import styled from 'styled-components'
+import { colors } from 'main-design'
+
+const withMobileDevice = (BaseComponent) => {
+  return class Container extends React.PureComponent {
+    state = { viewport: false }
+    componentDidMount () {
+      window.addEventListener('resize', this.updateDimensions)
+    }
+    componentWillUnmount () {
+      window.removeEventListener('resize', this.updateDimensions)
+    }
+    updateDimensions = () => {
+      const viewport = window.innerWidth < 768
+      this.setState({ viewport })
+    }
+    render () {
+      return (
+        <BaseComponent {...this.props} viewport={this.state.viewport} />
+      )
+    }
+  }
+}
 
 class HeaderContent extends React.PureComponent {
   static propTypes = {
     className: PropTypes.string,
     avatar: PropTypes.string,
+    viewport: PropTypes.bool,
+  }
+  renderMenu () {
+    return (
+      <div>
+        <Image className='avatar-image' src={this.props.avatar} circle />
+        <div className='menu'>
+          <span className='menu__link'>Home</span>
+          <span className='menu__link'>About us</span>
+          <span className='menu__link'>Contact us</span>
+        </div>
+      </div>
+
+    )
+  }
+  renderHambergerMenu () {
+    return (
+      <div>
+        <Image className='avatar-image' src={this.props.avatar} circle />
+
+      </div>
+    )
   }
   render () {
     return (
-      <PageHeader className={this.props.className}>
-        <Image className='avatar-image' src={this.props.avatar} circle />
-        <small className='menu-horizontal'>
-          <span className='menu-horizontal__link'>Home</span>
-          <span className='menu-horizontal__link'>About us</span>
-          <span className='menu-horizontal__link'>Contact us</span>
-        </small>
-      </PageHeader>
+      <div className={this.props.className}>
+        {(!this.props.viewport) ? this.renderMenu() : this.renderHambergerMenu()}
+      </div>
     )
   }
 }
 
-export default styled(HeaderContent)`
+export default withMobileDevice(styled(HeaderContent)`
   text-align: center;
+  padding: 20px 0;
   .avatar-image {
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
   }
-  .menu-horizontal {
-    display: block;
+  .menu {
+    font-size: 18px;
+    color: ${colors.$grey900};
     &__link {
       margin-right: 10px;
-      font-size: 14px;
-      margin-top: 10px;
       display: inline-block;
       cursor: pointer;
-      text-decoration: underline;
       &:last-child {
         margin-right: 0;
       }
     }
   }
-`
+`)
