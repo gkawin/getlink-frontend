@@ -1,17 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Image, PageHeader, small } from 'react-bootstrap'
-import Faker from 'faker'
 import styled from 'styled-components'
 
 class HeaderContent extends React.PureComponent {
   static propTypes = {
-    className: PropTypes.string
+    className: PropTypes.string,
+    avatar: PropTypes.string,
   }
   render () {
     return (
       <PageHeader className={this.props.className}>
-        <Image className='avatar-image' src={Faker.image.avatar()} circle />
+        <Image className='avatar-image' src={this.props.avatar} circle />
         <small className='menu-horizontal'>
           <span className='menu-horizontal__link'>Home</span>
           <span className='menu-horizontal__link'>About us</span>
@@ -25,8 +25,8 @@ class HeaderContent extends React.PureComponent {
 export default styled(HeaderContent)`
   text-align: center;
   .avatar-image {
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
   }
   .menu-horizontal {
     display: block;
