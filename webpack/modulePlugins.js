@@ -1,6 +1,7 @@
 const webpack = require('webpack')
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 module.exports = [
   new webpack.optimize.CommonsChunkPlugin({
@@ -17,5 +18,6 @@ module.exports = [
   new HtmlWebpackPlugin({
     title: 'Get Link :: front-end',
     template: path.join(__dirname, '..', 'src/template', 'index.html')
-  })
+  }),
+  new CleanWebpackPlugin()
 ]

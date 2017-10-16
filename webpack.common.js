@@ -1,5 +1,4 @@
 const path = require('path')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
 const modulePlugins = require('./webpack/modulePlugins')
 const moduleRulesBabel = require('./webpack/moduleRulesBabel')
 const moduleAliases = require('./webpack/moduleAliases')
@@ -24,10 +23,7 @@ module.exports = {
       ...moduleCommons
     ]
   },
-  plugins: [
-    ...modulePlugins,
-    new CleanWebpackPlugin()
-  ],
+  plugins: modulePlugins,
   node: {
     fs: 'empty'
   }

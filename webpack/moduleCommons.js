@@ -8,7 +8,7 @@ module.exports = [
       {
         loader: 'file-loader',
         options: {
-          name: development ? '[path][name].[ext]' : '[hash].[ext]'
+          name: development ? '[path][name].[ext]' : 'images/[hash].[ext]',
         }
       }
     ]
