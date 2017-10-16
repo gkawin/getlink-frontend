@@ -1,27 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
 import { Thumbnail } from 'react-bootstrap'
-import Faker from 'faker'
 
 class Box extends React.PureComponent {
   static propTypes = {
     className: PropTypes.string,
+    photo: PropTypes.string,
+    label: PropTypes.string,
+    shortDesc: PropTypes.string,
   }
   render () {
-    const imgSrc = Faker.image.image()
     return (
-      <div className={this.props.className}>
-        <Thumbnail src={imgSrc} alt='200x200' >
-          <h2 className='label-word'>{Faker.lorem.word()}</h2>
-          <p>{Faker.lorem.sentence()}</p>
-        </Thumbnail>
-      </div>
+      <Thumbnail src={this.props.photo} className={this.props.className}>
+        <h2 className='label-word'>{this.props.label}</h2>
+        <p>{this.props.shortDesc}</p>
+      </Thumbnail>
     )
   }
 }
 
-export default styled(Box)`
-  width: 200px;
-  height: 200px;
-`
+export default Box
