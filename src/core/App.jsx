@@ -56,6 +56,16 @@ class App extends React.PureComponent {
               label: Faker.lorem.word(),
               shortDesc: Faker.lorem.sentence()
             },
+            {
+              photo: Faker.image.image(),
+              label: Faker.lorem.word(),
+              shortDesc: Faker.lorem.sentence()
+            },
+            {
+              photo: Faker.image.image(),
+              label: Faker.lorem.word(),
+              shortDesc: Faker.lorem.sentence()
+            },
           ]}
           />
         </section>

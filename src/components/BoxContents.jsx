@@ -13,12 +13,12 @@ class BoxContents extends React.PureComponent {
   }
 
   renderItems = () => {
-    const itemPerRow = 3
+    const itemPerRow = 4
     const chuckedItems = _.chunk(this.props.contents, itemPerRow)
     return _.map(chuckedItems, (items, index) => (
       <Row key={index} className='grid-row'>
         {_.map(items, (item, index) => (
-          <Col sm={4} key={index}>
+          <Col sm={3} key={index}>
             <Box
               photo={item.photo}
               label={item.label}

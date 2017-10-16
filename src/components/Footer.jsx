@@ -51,6 +51,7 @@ export default styled(Footer)`
   box-sizing: border-box;
   background-color: ${colors.$grey100};
   .grid-row {
+    /* //HACK: space margin was adjusted by debugging on browser. */
     margin: 20px 70px;
     @media (max-width: 767px) {
       margin: 20px 0;
