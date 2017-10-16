@@ -59,7 +59,7 @@ class App extends React.PureComponent {
           ]}
           />
         </section>
-        <section className='footer'>
+        <footer className='footer'>
           <Footer contents={[
             {
               label: 'Company Name',
@@ -81,7 +81,7 @@ class App extends React.PureComponent {
             }
           ]}
           />
-        </section>
+        </footer>
       </div>
     )
   }

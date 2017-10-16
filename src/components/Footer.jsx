@@ -36,7 +36,7 @@ class Footer extends React.PureComponent {
     return (
       <div className={this.props.className}>
         <Grid>
-          <Row className='row__content'>
+          <Row className='grid-row'>
             {_.map(this.props.contents, this.renderFooterBoxItem)}
             {this.renderContactUs()}
           </Row>
@@ -50,10 +50,8 @@ export default styled(Footer)`
   border-top: 2px solid ${colors.$grey400};
   box-sizing: border-box;
   background-color: ${colors.$grey100};
-  .row {
-    &__content {
-      margin: 20px 70px;
-    }
+  .grid-row {
+    margin: 20px 70px;
     @media (max-width: 767px) {
       margin: 20px 0;
     }

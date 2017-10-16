@@ -16,7 +16,7 @@ class BoxContents extends React.PureComponent {
     const itemPerRow = 3
     const chuckedItems = _.chunk(this.props.contents, itemPerRow)
     return _.map(chuckedItems, (items, index) => (
-      <Row key={index} className='show-grid'>
+      <Row key={index} className='grid-row'>
         {_.map(items, (item, index) => (
           <Col sm={4} key={index}>
             <Box
@@ -31,16 +31,21 @@ class BoxContents extends React.PureComponent {
   }
   render () {
     return (
-      <Grid className={this.props.className}>
-        {this.renderItems()}
-      </Grid>
+      <div className={this.props.className}>
+        <Grid>
+          {this.renderItems()}
+        </Grid>
+      </div>
     )
   }
 }
 
 export default styled(BoxContents)`
-  padding: 0 100px;
-  @media (max-width: 767px) {
-    padding: 0 30px;
+  .grid-row {
+  /* //HACK: space margin was adjusted by debugging on browser. */
+    margin: 20px 70px;
+    @media (max-width: 767px) {
+      margin: 20px 0;
+    }
   }
 `
