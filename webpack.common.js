@@ -1,27 +1,21 @@
 const path = require('path')
+const modulePlugins = require('./webpack/modulePlugins')
 const moduleRulesBabel = require('./webpack/moduleRulesBabel')
 const moduleAliases = require('./webpack/moduleAliases')
-const modulePlugins = require('./webpack/modulePlugins')
 const moduleCommons = require('./webpack/moduleCommons')
-const development = process.env.NODE_ENV === 'development'
 
 module.exports = {
-  devtool: development ? 'eval' : 'source-map',
   entry: {
     app: path.resolve(__dirname, 'src', 'core', 'entry.js'),
-    vendor: [ 'react', 'react-dom', 'prop-types'   ]
+    vendor: [ 'react', 'react-dom', 'prop-types', 'lodash' ]
+  },
+  output: {
+    filename: '[name].bundle.js',
   },
   resolve: {
     alias: Object.assign({ }, moduleAliases,
       { 'main-design$': require.resolve('./src/design') }
     )
-  },
-  output: {
-    filename: '[name].bundle.js',
-    pathinfo: development
-  },
-  node: {
-    fs: 'empty'
   },
   module: {
     rules: [
@@ -30,8 +24,7 @@ module.exports = {
     ]
   },
   plugins: modulePlugins,
-  devServer: {
-    compress: true,
-    historyApiFallback: true
+  node: {
+    fs: 'empty'
   }
 }
