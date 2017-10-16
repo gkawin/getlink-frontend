@@ -18,7 +18,7 @@ class BoxContents extends React.PureComponent {
     return _.map(chuckedItems, (items, index) => (
       <Row key={index} className='show-grid'>
         {_.map(items, (item, index) => (
-          <Col md={4} key={index}>
+          <Col sm={4} key={index}>
             <Box
               photo={item.photo}
               label={item.label}
