@@ -2,6 +2,7 @@ const path = require('path')
 const moduleRulesBabel = require('./webpack/moduleRulesBabel')
 const moduleAliases = require('./webpack/moduleAliases')
 const modulePlugins = require('./webpack/modulePlugins')
+const moduleCommons = require('./webpack/moduleCommons')
 const development = process.env.NODE_ENV === 'development'
 
 module.exports = {
@@ -24,7 +25,8 @@ module.exports = {
   },
   module: {
     rules: [
-      ...moduleRulesBabel
+      ...moduleRulesBabel,
+      ...moduleCommons
     ]
   },
   plugins: modulePlugins,

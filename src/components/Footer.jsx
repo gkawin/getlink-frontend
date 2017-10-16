@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { Grid, Row, Col } from 'react-bootstrap'
+import { Grid, Row, Col, Image } from 'react-bootstrap'
 import _ from 'lodash'
 import { colors } from 'main-design'
 
@@ -10,10 +10,20 @@ class Footer extends React.PureComponent {
     className: PropTypes.string,
     items: PropTypes.array,
   }
-  renderContactUs = () => <Col sm={3}>Foot Card 4</Col>
+  renderContactUs = () => (
+    <Col sm={6} xs={12} >
+      <Image
+        src={require('../asserts/company_logo.png')} className='col__company-image' responsive
+      />
+      <div className='col__info-line' />
+      <div className='col__vistion'>
+          Company name is a quality cheapest price of whole hotel in the world.
+        </div>
+    </Col>
+  )
   renderFooterBoxItem = (item, index) => {
     return (
-      <Col sm={3} key={index}>
+      <Col sm={2} xs={4} key={index}>
         <div className='col__title'>{item.label}</div>
         <div className='col__info-line' />
         <ul className='col__menu-list'>
@@ -31,7 +41,7 @@ class Footer extends React.PureComponent {
             {this.renderContactUs()}
           </Row>
           <Row className='row__copyright'>
-            <Col sm={12}>©2017 GetLinks (Thailand) Co., Ltd. All Rights Reserved.</Col>
+            <Col sm={12}>©2017 Company Name (Thailand) Co., Ltd. All Rights Reserved.</Col>
           </Row>
         </Grid>
       </footer>
@@ -52,7 +62,8 @@ export default styled(Footer)`
     &__copyright {
       text-align: center;
       padding: 20px;
-      color: ${colors.$grey700}
+      color: ${colors.$grey400};
+      font-size: 14px;
     }
   }
   .col {
@@ -80,6 +91,14 @@ export default styled(Footer)`
       &:hover {
         color: ${colors.$teal400};
       }
+    }
+    &__company-image {
+      margin-bottom: 20px;
+    }
+    &__vistion {
+      color: ${colors.$grey400};
+      font-weight: lighter;
+      margin-top: 10px;
     }
   }
 `
