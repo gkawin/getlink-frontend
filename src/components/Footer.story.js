@@ -1,23 +1,28 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import Footer from './Footer.jsx'
-import Faker from 'faker'
 
 storiesOf('Footer', module)
 .add('Primary', () => (
   <Footer
     items={[
       {
-        label: Faker.lorem.word(),
-        shortDesc: Faker.lorem.sentence()
+        label: 'Company Name',
+        menus: [
+          'About us',
+          'Careers',
+          'Blogs',
+          'Term of service',
+          'Privacy policy'
+        ]
       },
       {
-        label: Faker.lorem.word(),
-        shortDesc: Faker.lorem.sentence()
+        label: 'For Customers',
+        menus: [ 'Request demo', 'FAQ' ]
       },
       {
-        label: Faker.lorem.word(),
-        shortDesc: Faker.lorem.sentence()
+        label: 'Community',
+        menus: [ 'Travel festival', 'Startup 101 Workshop', 'DrinkEntrepreneurs' ]
       }
     ]}
   />
