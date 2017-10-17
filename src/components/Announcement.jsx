@@ -10,8 +10,10 @@ class Anouncement extends React.PureComponent {
   render () {
     return (
       <Jumbotron className={this.props.className}>
-        <h1>Hello, world!</h1>
-        <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+        <div className='content'>
+          <h1>Hello, world!</h1>
+          <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+        </div>
       </Jumbotron>
     )
   }
@@ -20,4 +22,11 @@ class Anouncement extends React.PureComponent {
 export default styled(Anouncement)`
   padding: 50px;
   text-align: center;
+  background: url(${require('../asserts/Business_men_background.png')});
+  height: 500px;
+  .content {
+    position: relative;
+    top: 25%;
+    color: white;
+  }
 `

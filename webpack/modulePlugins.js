@@ -11,7 +11,7 @@ module.exports = [
     )
   }),
   new HtmlWebpackPlugin({
-    title: 'Get Link :: front-end',
+    title: 'GetLinks Frontend Developer Test',
     template: path.join(__dirname, '..', 'src/template', 'index.html')
   }),
   new CleanWebpackPlugin([ 'public' ])

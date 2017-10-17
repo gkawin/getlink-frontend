@@ -4,26 +4,7 @@ import { Image } from 'react-bootstrap'
 import styled from 'styled-components'
 import { colors } from 'main-design'
 
-const withMobileDevice = (BaseComponent) => {
-  return class Container extends React.PureComponent {
-    state = { viewport: false }
-    componentDidMount () {
-      window.addEventListener('resize', this.updateDimensions)
-    }
-    componentWillUnmount () {
-      window.removeEventListener('resize', this.updateDimensions)
-    }
-    updateDimensions = () => {
-      const viewport = window.innerWidth < 768
-      this.setState({ viewport })
-    }
-    render () {
-      return (
-        <BaseComponent {...this.props} viewport={this.state.viewport} />
-      )
-    }
-  }
-}
+import withViewport from '../concerns/withViewport'
 
 class HeaderContent extends React.PureComponent {
   static propTypes = {
@@ -44,26 +25,18 @@ class HeaderContent extends React.PureComponent {
 
     )
   }
-  renderHambergerMenu () {
-    return (
-      <div>
-        <Image className='avatar-image' src={this.props.avatar} circle />
-
-      </div>
-    )
-  }
   render () {
     return (
       <div className={this.props.className}>
-        {(!this.props.viewport) ? this.renderMenu() : this.renderHambergerMenu()}
+        {(!this.props.viewport) ? this.renderMenu() : null}
       </div>
     )
   }
 }
 
-export default withMobileDevice(styled(HeaderContent)`
+export default withViewport(styled(HeaderContent)`
   text-align: center;
-  padding: 20px 0;
+  padding: ${props => !props.viewport ? '20px 0' : 0};
   .avatar-image {
     width: 50px;
     height: 50px;
