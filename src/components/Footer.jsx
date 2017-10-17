@@ -17,8 +17,14 @@ class Footer extends React.PureComponent {
       />
       <div className='col__info-line' />
       <div className='col__vistion'>
-          Company name is a quality cheapest price of whole hotel in the world.
-        </div>
+        Company name is a quality cheapest price of whole hotel in the world.
+      </div>
+      <div className='col__social-icons'>
+        <Image src='https://png.icons8.com/facebook/color/48' responsive />
+        <Image src='https://png.icons8.com/linkedin/color/48' responsive />
+        <Image src='https://png.icons8.com/instagram/color/48' responsive />
+        <Image src='https://png.icons8.com/twitter/color/48' responsive />
+      </div>
     </Col>
   )
   renderFooterBoxItem = (item, index) => {
@@ -87,7 +93,11 @@ export default styled(Footer)`
     }
     &__vistion {
       color: ${colors.$grey500};
-      margin-top: 10px;
+      margin: 10px 0;
+    }
+    &__social-icons {
+      display: flex;
+      flex-direction: row;
     }
   }
 `

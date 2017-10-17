@@ -60,3 +60,6 @@ typings/
 # MAC file
 .DS_Store
 dist
+
+# deploy site
+public
