@@ -16,11 +16,12 @@ branches:
 
 before_script:
   - npm install -g firebase-tools
-  - npm install && npm install
+  - yarn
 
 script:
-  - npm run lint
-  - npm run build
+  - yarn lint
+  - yarn build
 
 after_success:
-  - npm run deploy --token "$FIREBASE_TOKEN"
+  - firebase list
+  - firebase deploy --token "$FIREBASE_TOKEN" --project getlink-frontend --debug
