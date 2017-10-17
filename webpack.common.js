@@ -1,8 +1,11 @@
 const path = require('path')
+
 const modulePlugins = require('./webpack/modulePlugins')
 const moduleRulesBabel = require('./webpack/moduleRulesBabel')
 const moduleAliases = require('./webpack/moduleAliases')
 const moduleCommons = require('./webpack/moduleCommons')
+
+const development = process.env.NODE_ENV === 'development'
 
 module.exports = {
   entry: {
@@ -10,7 +13,7 @@ module.exports = {
     vendor: [ 'react', 'react-dom', 'prop-types', 'lodash' ]
   },
   output: {
-    filename: '[name].bundle.js',
+    filename: `[name][${development ? 'hash' : 'chunkhash'}].bundle.js`,
   },
   resolve: {
     alias: Object.assign({ }, moduleAliases,

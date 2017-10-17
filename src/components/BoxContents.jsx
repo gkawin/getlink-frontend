@@ -2,7 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { Grid, Row, Col } from 'react-bootstrap'
-import _ from 'lodash'
+import map from 'lodash/map'
+import chunk from 'lodash/chunk'
 
 import Box from './uikits/Box.jsx'
 
@@ -14,10 +15,10 @@ class BoxContents extends React.PureComponent {
 
   renderItems = () => {
     const itemPerRow = 4
-    const chuckedItems = _.chunk(this.props.contents, itemPerRow)
-    return _.map(chuckedItems, (items, index) => (
+    const chuckedItems = chunk(this.props.contents, itemPerRow)
+    return map(chuckedItems, (items, index) => (
       <Row key={index} className='grid-row'>
-        {_.map(items, (item, index) => (
+        {map(items, (item, index) => (
           <Col sm={3} key={index}>
             <Box
               photo={item.photo}

@@ -1,6 +1,7 @@
 const path = require('path')
 const merge = require('webpack-merge')
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
+const webpack = require('webpack')
 const common = require('./webpack.common.js')
 
 module.exports = merge(common, {
@@ -10,6 +11,13 @@ module.exports = merge(common, {
     pathinfo: false
   },
   plugins: [
+    new webpack.HashedModuleIdsPlugin(),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'runtime'
+    }),
     new UglifyJSPlugin({
       sourceMap: true
     })

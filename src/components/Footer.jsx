@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { Grid, Row, Col, Image } from 'react-bootstrap'
-import _ from 'lodash'
+import map from 'lodash/map'
 import { colors } from 'main-design'
 
 class Footer extends React.PureComponent {
@@ -33,7 +33,7 @@ class Footer extends React.PureComponent {
         <div className='col__title'>{item.label}</div>
         <div className='col__info-line' />
         <ul className='col__menu-list'>
-          {_.map(item.menus, (menu, index) => <li className='col__menu-item' key={index}>{menu}</li>)}
+          {map(item.menus, (menu, index) => <li className='col__menu-item' key={index}>{menu}</li>)}
         </ul>
       </Col>
     )
@@ -43,7 +43,7 @@ class Footer extends React.PureComponent {
       <div className={this.props.className}>
         <Grid>
           <Row className='grid-row'>
-            {_.map(this.props.contents, this.renderFooterBoxItem)}
+            {map(this.props.contents, this.renderFooterBoxItem)}
             {this.renderContactUs()}
           </Row>
         </Grid>
