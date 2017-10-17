@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { Grid, Row, Col } from 'react-bootstrap'
 import _ from 'lodash'
 
-import Box from './Box.jsx'
+import Box from './uikits/Box.jsx'
 
 class BoxContents extends React.PureComponent {
   static propTypes = {
