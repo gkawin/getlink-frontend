@@ -5,7 +5,7 @@ const webpack = require('webpack')
 const common = require('./webpack.common.js')
 
 module.exports = merge(common, {
-  devtool: 'source-map',
+  devtool: 'cheap-module-source-map',
   output: {
     path: path.resolve(__dirname, 'public'),
     pathinfo: false
@@ -18,8 +18,6 @@ module.exports = merge(common, {
     new webpack.optimize.CommonsChunkPlugin({
       name: 'runtime'
     }),
-    new UglifyJSPlugin({
-      sourceMap: true
-    })
+    new UglifyJSPlugin()
   ]
 })

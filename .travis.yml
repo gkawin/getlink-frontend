@@ -23,5 +23,4 @@ script:
   - yarn build
 
 after_success:
-  - echo $FIREBASE_TOKEN
   - firebase deploy --token $FIREBASE_TOKEN --project getlink-frontend --debug
