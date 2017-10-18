@@ -10,7 +10,7 @@ const development = process.env.NODE_ENV === 'development'
 module.exports = {
   entry: {
     app: path.resolve(__dirname, 'src', 'core', 'entry.js'),
-    vendor: [ 'react', 'react-dom', 'prop-types', 'lodash' ]
+    vendor: [ 'react', 'react-dom', 'prop-types', 'lodash', 'styled-components' ]
   },
   output: {
     filename: `[name][${development ? 'hash' : 'chunkhash'}].bundle.js`,

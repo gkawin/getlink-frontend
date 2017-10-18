@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Faker from 'faker'
+import Faker from 'faker/locale/en'
 import styled from 'styled-components'
 import fill from 'lodash/fill'
 
