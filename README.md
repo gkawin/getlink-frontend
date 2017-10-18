@@ -1,9 +1,9 @@
 # getlink-frontend
 [![Build Status](https://travis-ci.org/gkawin/getlink-frontend.svg?branch=master)](https://travis-ci.org/gkawin/getlink-frontend)
 
-# check it out only on [click it softly](https://getlink-frontend.firebaseapp.com/) (hosting by Firebase)
+__check it out only on [click it softly](https://getlink-frontend.firebaseapp.com/) (hosting by Firebase)__
 
-# I use those stacks to develop following by this list at down below
+__I use those stacks to develop following by this list at down below__
 - [Webpack](https://webpack.js.org)
 - [React Bootstrap](https://react-bootstrap.github.io)
 - [Styled Component](https://www.styled-components.com/)
