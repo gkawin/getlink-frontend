@@ -8,7 +8,9 @@ module.exports = merge(common, {
   devtool: 'cheap-module-source-map',
   output: {
     path: path.resolve(__dirname, 'public'),
-    pathinfo: false
+    filename: `[name][chunkhash].bundle.js`,
+    pathinfo: false,
+    chunkFilename: '[name].[chunkhash].js'
   },
   plugins: [
     new webpack.HashedModuleIdsPlugin(),

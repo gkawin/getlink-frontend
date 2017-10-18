@@ -25,7 +25,7 @@ class App extends React.PureComponent {
     return (
       <div className={this.props.className}>
         <header className='header-content'>
-          <HeaderContent avatar={require('../asserts/company_logo.png')} />
+          <HeaderContent avatar={Faker.image.avatar()} />
         </header>
         <section className='announcement'>
           <Announcement />
